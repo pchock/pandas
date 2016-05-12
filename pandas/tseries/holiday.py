@@ -142,17 +142,17 @@ class Holiday(object):
 
         Examples
         --------
-        >>> from pandas.tseries.holiday import Holiday, nearest_workday
-        >>> from pandas import DateOffset
-        >>> from dateutil.relativedelta import MO
-        >>> USMemorialDay = Holiday('MemorialDay', month=5, day=24,
+        # from pandas.tseries.holiday import Holiday, nearest_workday
+        # from pandas import DateOffset
+        # from dateutil.relativedelta import MO
+        # USMemorialDay = Holiday('MemorialDay', month=5, day=24,
                                     offset=DateOffset(weekday=MO(1)))
-        >>> USLaborDay = Holiday('Labor Day', month=9, day=1,
+        # USLaborDay = Holiday('Labor Day', month=9, day=1,
                             offset=DateOffset(weekday=MO(1)))
-        >>> July3rd = Holiday('July 3rd', month=7, day=3,)
-        >>> NewYears = Holiday('New Years Day', month=1,  day=1,
+        # July3rd = Holiday('July 3rd', month=7, day=3,)
+        # NewYears = Holiday('New Years Day', month=1,  day=1,
                                observance=nearest_workday),
-        >>> July3rd = Holiday('July 3rd', month=7, day=3,
+        # July3rd = Holiday('July 3rd', month=7, day=3,
                               days_of_week=(0, 1, 2, 3))
         """
         if offset is not None and observance is not None:
@@ -474,6 +474,8 @@ USMartinLutherKingJr = Holiday('Dr. Martin Luther King Jr.',
                                offset=DateOffset(weekday=MO(3)))
 USPresidentsDay = Holiday('President''s Day', month=2, day=1,
                           offset=DateOffset(weekday=MO(3)))
+USVeteransDay = Holiday('Veterans Day', month=11, day=11, observance=nearest_workday)
+
 GoodFriday = Holiday("Good Friday", month=1, day=1, offset=[Easter(), Day(-2)])
 
 EasterMonday = Holiday("Easter Monday", month=1, day=1,
